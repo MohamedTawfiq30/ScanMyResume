@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Document/Resume base -->
+  <rect x="12" y="8" width="52" height="68" rx="5" fill="#e8eef4" stroke="#b0bec9" stroke-width="2"/>
+  <!-- Folded corner -->
+  <path d="M52 8 L64 20 L52 20 Z" fill="#c8d8e4"/>
+  <line x1="52" y1="8" x2="52" y2="20" stroke="#b0bec9" stroke-width="1.5"/>
+  <line x1="52" y1="20" x2="64" y2="20" stroke="#b0bec9" stroke-width="1.5"/>
+  <!-- Text lines on document -->
+  <line x1="22" y1="32" x2="50" y2="32" stroke="#9fb0be" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="22" y1="40" x2="54" y2="40" stroke="#b8c8d4" stroke-width="2" stroke-linecap="round"/>
+  <line x1="22" y1="47" x2="48" y2="47" stroke="#b8c8d4" stroke-width="2" stroke-linecap="round"/>
+  <line x1="22" y1="54" x2="52" y2="54" stroke="#b8c8d4" stroke-width="2" stroke-linecap="round"/>
+  <line x1="22" y1="61" x2="42" y2="61" stroke="#b8c8d4" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Magnifying glass circle -->
+  <circle cx="62" cy="62" r="22" fill="white" stroke="#7fb8c8" stroke-width="2.5"/>
+  <circle cx="62" cy="62" r="16" fill="#eaf6f8" stroke="#7fb8c8" stroke-width="1.5"/>
+
+  <!-- Checkmark inside magnifying glass -->
+  <polyline points="53,62 59,69 72,54" stroke="#5ba8b8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- Magnifying glass handle -->
+  <line x1="79" y1="79" x2="92" y2="92" stroke="#7fb8c8" stroke-width="5" stroke-linecap="round"/>
+</svg>
