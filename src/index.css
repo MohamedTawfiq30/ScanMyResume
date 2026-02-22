@@ -1,0 +1,242 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 12% 4%;
+    --foreground: 0 0% 96%;
+    --card: 240 8% 7%;
+    --card-foreground: 0 0% 96%;
+    --popover: 240 8% 7%;
+    --popover-foreground: 0 0% 96%;
+    --primary: 0 0% 96%;
+    --primary-foreground: 240 12% 4%;
+    --secondary: 240 6% 11%;
+    --secondary-foreground: 0 0% 96%;
+    --muted: 240 5% 14%;
+    --muted-foreground: 240 4% 46%;
+    --accent: 240 5% 16%;
+    --accent-foreground: 0 0% 96%;
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 0 0% 96%;
+    --border: 240 6% 14%;
+    --input: 240 6% 9%;
+    --ring: 0 0% 60%;
+    --radius: 0.5rem;
+
+    --sidebar-background: 240 10% 5%;
+    --sidebar-foreground: 0 0% 96%;
+    --sidebar-primary: 0 0% 96%;
+    --sidebar-primary-foreground: 240 12% 4%;
+    --sidebar-accent: 240 5% 12%;
+    --sidebar-accent-foreground: 0 0% 96%;
+    --sidebar-border: 240 6% 12%;
+    --sidebar-ring: 0 0% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Satoshi', -apple-system, sans-serif;
+  }
+}
+
+/* ── Grid background ── */
+.ag-grid-bg {
+  background-color: hsl(240 12% 4%);
+  background-image:
+    linear-gradient(hsla(0, 0%, 100%, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, hsla(0, 0%, 100%, 0.025) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* ── Glass card ── */
+.ag-glass {
+  background: hsla(240, 8%, 10%, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid hsla(0, 0%, 100%, 0.06);
+  border-radius: 10px;
+  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.ag-glass:hover {
+  border-color: hsla(0, 0%, 100%, 0.12);
+  box-shadow: 0 0 24px 2px hsla(0, 0%, 100%, 0.04);
+}
+
+/* ── Glass card (static, no hover) ── */
+.ag-glass-static {
+  background: hsla(240, 8%, 10%, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid hsla(0, 0%, 100%, 0.06);
+  border-radius: 10px;
+}
+
+/* ── Buttons ── */
+.ag-btn {
+  @apply text-foreground cursor-pointer font-medium;
+  font-family: 'Satoshi', sans-serif;
+  background: hsla(240, 6%, 12%, 0.8);
+  border: 1px solid hsla(0, 0%, 100%, 0.08);
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.ag-btn:hover {
+  background: hsla(240, 6%, 16%, 0.9);
+  border-color: hsla(0, 0%, 100%, 0.16);
+  box-shadow: 0 0 20px 2px hsla(0, 0%, 100%, 0.05);
+}
+
+.ag-btn:active {
+  transform: translateY(1px);
+}
+
+.ag-btn-primary {
+  @apply font-semibold;
+  background: hsl(0 0% 96%);
+  color: hsl(240 12% 4%);
+  border: 1px solid hsla(0, 0%, 100%, 0.15);
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.ag-btn-primary:hover {
+  background: hsl(0 0% 88%);
+  box-shadow: 0 0 28px 4px hsla(0, 0%, 100%, 0.08);
+}
+
+.ag-btn-primary:active {
+  transform: translateY(1px);
+}
+
+/* ── Input ── */
+.ag-input {
+  @apply text-foreground p-4 w-full outline-none;
+  font-family: 'Satoshi', sans-serif;
+  font-size: 14px;
+  background: hsla(240, 6%, 8%, 0.8);
+  border: 1px solid hsla(0, 0%, 100%, 0.06);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.ag-input::placeholder {
+  color: hsl(240 4% 38%);
+}
+
+.ag-input:focus {
+  border-color: hsla(0, 0%, 100%, 0.18);
+  box-shadow: 0 0 16px 1px hsla(0, 0%, 100%, 0.04);
+}
+
+/* ── Keyword pills ── */
+.ag-pill {
+  @apply text-xs px-3 py-1.5 font-medium;
+  background: hsla(0, 0%, 100%, 0.04);
+  border: 1px solid hsla(0, 0%, 100%, 0.08);
+  border-radius: 100px;
+  color: hsl(0 0% 80%);
+  transition: all 0.25s ease;
+}
+
+.ag-pill:hover {
+  border-color: hsla(0, 0%, 100%, 0.18);
+  background: hsla(0, 0%, 100%, 0.07);
+}
+
+.ag-pill-muted {
+  @apply text-xs px-3 py-1.5;
+  background: hsla(0, 0%, 100%, 0.02);
+  border: 1px solid hsla(0, 0%, 100%, 0.05);
+  border-radius: 100px;
+  color: hsl(240 4% 46%);
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsla(0, 0%, 100%, 0.08);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsla(0, 0%, 100%, 0.14);
+}
+
+/* ── Animations ── */
+@keyframes ag-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ag-fade-up {
+  animation: ag-fade-up 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.ag-fade-up-d1 {
+  animation: ag-fade-up 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.08s forwards;
+  opacity: 0;
+}
+
+.ag-fade-up-d2 {
+  animation: ag-fade-up 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.16s forwards;
+  opacity: 0;
+}
+
+.ag-fade-up-d3 {
+  animation: ag-fade-up 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.24s forwards;
+  opacity: 0;
+}
+
+@keyframes ag-score-fill {
+  from { width: 0%; }
+  to { width: var(--fill); }
+}
+
+.ag-score-fill {
+  animation: ag-score-fill 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes ag-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.ag-pulse {
+  animation: ag-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes ag-slide-x {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(300%); }
+}
+
+.ag-loading-bar {
+  animation: ag-slide-x 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
